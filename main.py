@@ -182,7 +182,7 @@ def main(args):
     ema = deepcopy(model).to(device)  # Create an EMA of the model for use after training
     requires_grad(ema, False)
     diffusion = create_mask_diffusion(timestep_respacing="",learn_sigma=args.learn_sigma)
-    vae = AutoencoderKL.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", subfolder="vae").to(device)
+    vae = AutoencoderKL.from_pretrained("/home/junzhicai/.cache/huggingface/hub/models--stabilityai--stable-diffusion-xl-base-1.0/snapshots/462165984030d82259a11f4367a4eed129e94a7b/vae").to(device)
 
 
     assert not (args.evaluate_checkpoint == False and args.do_evaluate)
